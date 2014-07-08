@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "beefy app.js:bundle.js --live",
-    "bundle": "browserify app.js -o bundle.js"
+    "bundle": "browserify app.js -o bundle.js",
+    "bundle-debug": "BROWSERIFYSHIM_DIAGNOSTICS=1 browserify app.js -o bundle.js"
   },
   "keywords": [
     "leaflet",
@@ -16,10 +17,18 @@
   "author": "David Rust-Smith",
   "license": "MIT",
   "dependencies": {
-    "leaflet": "~0.7.2"
+    "leaflet": "~0.7.2",
+    "esri-leaflet": "0.0.1-beta.5"
   },
   "devDependencies": {
     "beefy": "~1.1.0",
-    "browserify": "~3.33.0"
+    "browserify": "~3.33.0",
+    "browserify-shim": "~3.6.0"
+  },
+  "browserify": {
+    "transform": [ "browserify-shim" ]
+  },
+  "browserify-shim": {
+    "./node_modules/esri-leaflet/dist/esri-leaflet.js" :  { "exports": "L", "depends": [ "./node_modules/leaflet/dist/leaflet.js:L" ] }
   }
 }
