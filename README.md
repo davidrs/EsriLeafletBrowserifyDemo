@@ -1,7 +1,8 @@
 EsriLeafletBrowserifyDemo
 =========================
 
-A simple demo for using ESRI-Leaflet with Browserify
+A simple demo for using ESRI-Leaflet with Browserify.
+[Live Demo](http://davidrs.github.io/EsriLeafletBrowserifyDemo/)
 
 To Run
 ------
