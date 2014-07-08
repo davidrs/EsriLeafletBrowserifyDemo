@@ -11,7 +11,7 @@ npm install
 
 npm run bundle
 
-Open index.html
+// Then open index.html
 ```
 
 How it Works
